@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: frontend
+    env: node
+    plan: free
+    buildCommand: cd frontend && npm install
+    startCommand: cd frontend && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+
+  - type: web
+    name: backend
+    env: node
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm run dev
+    envVars:
+      - key: NODE_VERSION
+        value: 18
